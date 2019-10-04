@@ -1,0 +1,7 @@
+Import-Module ActiveDirectory
+
+$user= 'DC USer Name'
+
+$Pass= Read-Host 'password?'
+
+Set-ADAccountPassword -Identity $user -Reset -NewPassword (ConvertTo-SecureString -AsPlainText "$Pass" -Force)
